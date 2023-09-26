@@ -2,20 +2,34 @@
 import './App.css';
 
 
-const fname = "Merve"
-const lname = "Ayaz"
-const currentDate = new Date()
+const date = new Date ();
+const currentTime = date.getHours();
 
-const currentYear = currentDate.getFullYear();
+let greeting;
 
-function App() {
+const customStyle = {
+  color: ""
+}
+
+if (currentTime < 12) {
+  greeting = "Good Morning"
+  customStyle.color = "red";
+} else if (currentTime < 18){
+  greeting = "Good Afternoon"
+  customStyle.color = "blue";
+} else {
+  greeting = "Good Night"
+  customStyle.color = "green";
+}
+
+
+
+
+ function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Created by {fname + " " + lname} </p>
-        <p>Copyright {currentYear}</p>
-      </header>
-    </div>
+      <h1 style={customStyle}>{greeting}</h1>
+  </div>
   );
 }
 
