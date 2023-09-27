@@ -1,6 +1,7 @@
 import React from "react";
 
-
+function Heading() {
+    
 const date = new Date();
 const currentTime = date.getHours();
 
@@ -12,7 +13,7 @@ const customStyle = {
 
 if (currentTime < 12) {
   greeting = "Good Morning";
-  customStyle.color = "green";
+  customStyle.color = "purple";
 } else if (currentTime < 18) {
   greeting = "Good Afternoon";
   customStyle.color = "green";
@@ -21,9 +22,7 @@ if (currentTime < 12) {
   customStyle.color = "blue";
 }
 
-
-function Heading() {
-  return <h1 className="heading" style={customStyle}>
+return <h1 className="heading" style={customStyle}>
   {greeting}
 </h1>;
 }
