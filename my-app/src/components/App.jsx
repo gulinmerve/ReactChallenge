@@ -1,15 +1,20 @@
 import React from "react";
-import Heading from "./Heading";
-// import List from "./List";
-// import '../styles/App.css';
+import Header from "./Header";
+import Footer from "./Footer";
+import Note from "./Note";
+import "../styles/style.css"
+
 
 function App() {
   return (
     <div>
-      <Heading />
+      <Header />
+      <Note />
+      <Footer />
     </div>
   );
 }
+
 
 export default App;
 
