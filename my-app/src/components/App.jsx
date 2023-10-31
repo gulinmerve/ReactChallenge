@@ -1,24 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 
 function App() {
-  setInterval(updateTime, 1000);
-
-  const now = new Date().toLocaleTimeString();
-
-  const [time, setTime] = useState(now);
-
-  function updateTime() {
-    const newTime = new Date().toLocaleTimeString();
-    setTime(newTime);
-  }
-
   return (
     <div className="container">
-      <h1>{time}</h1>
-      <button onClick={updateTime}>Get Time</button>
+      <div className="heading">
+        <h1>To-Do List</h1>
+      </div>
+      <div className="form">
+        <input type="text" />
+        <button>
+          <span>Add</span>
+        </button>
+      </div>
+      <div>
+        <ul>
+          <li>A Item</li>
+        </ul>
+      </div>
     </div>
   );
 }
 
 export default App;
-x
