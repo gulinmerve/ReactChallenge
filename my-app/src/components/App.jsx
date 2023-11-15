@@ -1,40 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+import Note from "./Note";
+import CreateArea from "./CreateArea";
 
 function App() {
-
-  const [inputText, setInputText] = useState("");
-  const [items, setItems] = useState([])
-
-  function handleChange(event) {
-    const newValue = event.target.value;
-    setInputText(newValue);
-  }
-
-  function addItem() {
-    setItems( (prevItem) => {
-      return [...prevItem, inputText];
-    })
-    setInputText("")
-  }
-
   return (
-    <div className="container">
-      <div className="heading">
-        <h1>To-Do List</h1>
-      </div>
-      <div className="form">
-        <input onChange={handleChange} type="text"  value={inputText} />
-        <button onClick={addItem}>
-          <span>Add</span>
-        </button>
-      </div>
-      <div>
-        <ul>
-         { items.map((todoItem) => <li>{todoItem}</li>)}
-        </ul>
-      </div>
+    <div>
+      <Header />
+      <CreateArea />
+      <Note key={1} title="Note title" content="Note content" />
+      <Footer />
     </div>
-  );
+  ); 
 }
 
 export default App;
